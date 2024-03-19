@@ -1,0 +1,15 @@
+
+
+  .cont {
+    @apply flex flex-col bg-white max-w-[400px] rounded-3xl; /* Asegura el centrado vertical y horizontal */
+
+}
+.header {
+    @apply  w-full rounded-t-3xl;
+  }
+.title {
+    @apply  text-lg font-bold text-neutral-900 m-3 ;
+  }
+.subtitle {
+    @apply text-lg text-neutral-700 mx-3;
+  }
