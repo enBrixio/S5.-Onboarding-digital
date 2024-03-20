@@ -1,40 +1,22 @@
 import cardStyle from  './card.module.css' ;
-import {useState} from 'react';
+import type {Tutorial} from "../type"
 
-function   Card () {
-
-    interface Tutorial {
-        title: string;
-        description: string;
-        bgcolor: string;
-        img: string;
-      }
-      
-      const tutorialData: Tutorial[] = [
-        {   
-          title: 'Dedica moltes hores',
-          description: 'Un minim de 30 hores a la setmana. Si no en tens prou, hauràs de decar-li més hores. Al principi sembla imposiblle, però notaràs una millora rápidament',
-          bgcolor: '#2EA9A9 ',
-          img: './public/meditation.svg'
-        }
-      ];
-      
-    const [step,setStep] = useState(0);
-    const data = tutorialData[step];
-
+function   Card ({nextStep, cards, step}: {nextStep: () => void, cards: Tutorial[], step: number}) {
+    console.log(cards);
+    console.log(nextStep);
     return (
         
             <section className={cardStyle.cont}>
-                <header className={cardStyle.header} style={{background: `${data.bgcolor}`}}>
-                    <img src={data.img} alt="test" />
+                <header className={cardStyle.header} style={{background: `${cards[step].bgcolor}`}}>
+                    <img src={cards[step].img} alt="test" />
                 </header>
                 <section>
-                    <h2 className={cardStyle.title}>{data.title}</h2>
-                    <p className={cardStyle.subtitle}>{data.description}</p>
+                    <h2 className={cardStyle.title}>{cards[step].title}</h2>
+                    <p className={cardStyle.subtitle}>{cards[step].description}</p>
                 </section>
                     <footer>
-                        {/* <button onClick={() => setStep(0)}>Anterior</button>
-                        <button onClick={() => setStep(1)}>Següent</button> */}
+                        <button onClick={nextStep}>Siguiente</button>
+                        {/* <button onClick={() => setStep(1)}>Següent</button> */}
                     </footer>
   
             </section>

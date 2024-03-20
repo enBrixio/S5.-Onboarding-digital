@@ -11,5 +11,5 @@
     @apply  text-lg font-bold text-neutral-900 m-3 ;
   }
 .subtitle {
-    @apply text-lg text-neutral-700 mx-3;
+    @apply text-lg text-neutral-700 mx-3 mb-4;
   }
