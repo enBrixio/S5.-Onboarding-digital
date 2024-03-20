@@ -1,4 +1,7 @@
 import cardStyle from  './card.module.css' ;
+import BnStep from './BnStep';
+import Indicador from './Indicador';
+// import { CardProps } from '../type';
 import type {Tutorial} from "../type"
 
 function   Card ({nextStep, cards, step}: {nextStep: () => void, cards: Tutorial[], step: number}) {
@@ -14,9 +17,9 @@ function   Card ({nextStep, cards, step}: {nextStep: () => void, cards: Tutorial
                     <h2 className={cardStyle.title}>{cards[step].title}</h2>
                     <p className={cardStyle.subtitle}>{cards[step].description}</p>
                 </section>
-                    <footer>
-                        <button onClick={nextStep}>Siguiente</button>
-                        {/* <button onClick={() => setStep(1)}>Següent</button> */}
+                    <footer className={cardStyle.footer}>
+                        <Indicador />
+                        <BnStep />
                     </footer>
   
             </section>
