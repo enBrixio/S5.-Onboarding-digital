@@ -1,6 +1,6 @@
 import cardStyle from "./card.module.css";
 import BnStep from "./BnStep";
-import Indicador from "./Indicador";
+import Indicador from "./Indicator";
 import arrowR from "../assets/arrow-right-solid.svg";
 import arrowL from "../assets/arrow-left-solid.svg";
 import type { Tutorial } from "../type";
@@ -33,7 +33,8 @@ function Card({
         <p className={cardStyle.subtitle}>{cards[step].description}</p>
       </section>
       <footer className={cardStyle.footer}>
-      <Indicador />
+
+      <Indicador steps={cards.length} currentStep={step}/>
         <div className={cardStyle.div_buttons}>
         {step !== 0 && (
             <BnStep color="grey" click={prevStep}>
@@ -46,6 +47,7 @@ function Card({
               <img src={arrowR} alt="Arrow" />
             </BnStep>
           )}
+
         </div>
       
       </footer>

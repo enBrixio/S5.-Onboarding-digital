@@ -24,12 +24,18 @@
   @apply w-12 h-12 m-1 rounded-full text-white bg-black p-4;
 }
 
-.span {
-  @apply bg-black w-5 h-1 rounded-full m-1 ms-3 mt-8;
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: inline-block;
+  align-content: center;
 }
 
-.span2 {
-  @apply bg-slate-500 flex w-2 h-1 rounded-full m-1 mt-8;
+.dotActive {
+  background-color: #000;
 }
 
 .div_button {

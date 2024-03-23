@@ -10,7 +10,7 @@ function App() {
   const prevStep = () => {
     setStep((prev) => (prev - 1 + 3) % 3);
   }
-  
+
   console.log("es Step",step);
 
   return (
